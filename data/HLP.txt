@@ -1,0 +1,22 @@
+aa: Address   (Hex) aa.2 = 32bit
+nn: set value (Dec)
+[ch]: Channel (0,1)
+____________________________________
+aa=nn [aa.2=n]      R[aa] = nn   
+aa?   [aa.2?]       Read R[aa]    
+ofs[apq][ch]=nn -> offset a,p,q  
+cal[fv]=nn      -> cal. val f,v       
+cal[apq][ch]=nn -> cal. val a,p,q,pf
+rngv[<>]        -> Shift V   (R/L)
+rng[ap][ch][<>] -> Shift A,P (R/L)
+zerop[ch]       -> rst energy cnt
+erase           -> Erase    EEprom
+store           -> Store on EEprom
+____________________________________
+NOTE: [f,v,a,p,q] and ch: only one 
+E.g. (cala1=1.05 calv=227.5 rnga1<)     
+Error codes:      
+0:TimeoutRx -1:OddAddress -2:Nack
+-3:ChksmErr -4:Undefined    
+hostn=ss    
+set the hostname to ss(2..15 char)                     

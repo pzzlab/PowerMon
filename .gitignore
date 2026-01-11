@@ -1,0 +1,9 @@
+# Arduino GitIgonre 
+.vscode/
+*.bak
+*.lnk
+*.gz
+*.zip
+*.rar
+*.jar
+.history

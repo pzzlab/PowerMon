@@ -1,0 +1,66 @@
+﻿<!-- Main Page of WebServer --> 
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8" name="viewport" content="width=device-width"/>
+	<link rel="icon" href="data:,">
+  <title>PwrMon V1.0 By P.F.</title> 
+  <style type="text/css">
+	body		{font:bold 20px arial;} 
+	table		{background-color:antiquewhite;border:2px solid black;height:100px;width:305px;margin-top:4px;}
+	th			{text-align:center;}
+	td			{border:thin solid black;text-align:right;padding-right:2px;background-color:aquamarine;height:30px;}
+	th			{font-size:16px;}
+	textarea 	{display:none; font:normal 70% 'sans-serif';background-color:burlywood ;width:99%;}
+	.pf			{color:brown; width:45px;}
+	.a			{color:fuchsia;width:100px;}
+	.w			{color:blue;width:100px;}
+	.accbtn		{font:bold 16px;}
+	.hist		{font-size:12px;color:darkmagenta;}
+	#cmd		{color:maroon;font:normal 14px 'courier';width:180px;} /*position:relative;top:-132px;left:250px;} */
+	#okbtn		{font:bold 14px;}/*position:relative;top:-132px;left:260px;}*/
+	#hlog		{color:red; width:305px;height:100px;}
+	#hresp		{color:blue;width:305px;height:20px;}
+	#htxt		{color:black;font:normal 12px 'courier';width:300px;}
+	#rtxt		{color:blue; font:normal 12px 'courier';width:300px;}
+	#dvhz		{font-size:18px;color:blue;}
+	#dbgcomm	{font:normal 12px 'courier';margin-top:4px;}
+	#dbgtxt		{font-size:12px;background-color:transparent; resize:none;display:none;}
+	#usrbtn		{color:green}
+	#srvcbtn	{color:purple}
+	#eefmt		{color:red}
+	#div1		{height: 130px;}
+		
+  </style>
+</head>
+<body onload="EntryPage();">
+	<div id = "div1">
+		<table id="tab">
+			</output> <output id="dvhz">Device?</output><br>
+			<tbody>
+				<tr><th>Cos&#934</th><th>A</th><th>W</th></tr>
+				<tr><td class="pf"id="pf0"></td><td class="a" id="a0"></td><td class="w"  id="w0"></td></tr>
+				<tr><td class="pf"id="pf1"></td><td class="a" id="a1"></td><td class="w"  id="w1"></td></tr>
+			</tbody>
+		</table>
+	<div>
+		<input type="text" id="cmd" maxlength="24" onkeydown="if (event.key == 'Enter') CmdKdn();"/>
+		<button id="okbtn" onclick="CmdKdn()" title="Ok">Send</button><br/>
+		<output id="hresp" class="hist">response</output><br/>
+		<select id="hlog"  class="hist" size="7" onclick="HClick(this.selectedIndex)" onchange="HChg(this.selectedIndex)"></select>
+	</div>
+	<div id="chkb">
+		<input type="checkbox" id="hlp" name="hlp" onclick="Help('h')"/> <label for="hlp">Cmd ?</label>
+		<input type="checkbox" id="regs"name="regs"onclick="Help('r')"/> <label for="regs">Regs ?</label>
+		<textarea id="htxt" rows="10" readonly wrap="hard"></textarea>
+		<textarea id="rtxt" rows="10" readonly wrap="hard"></textarea><br>
+	</div>
+	<div id="btns">
+		<button id="usrbtn"  class="accbtn" onclick="location.href='logout?index.html'" title="Return to Main Page">Main Page</button>
+		<button id="eefmt"   class="accbtn" onclick="EeErase()" title="Clear All Stored Data">Reset All Data</button>
+		</br><output id="dbgcomm"></output><br/>
+		<output	id="txt"></output>
+	</div>
+	<script type="text/javascript" src="service.js"></script>
+	</body>
+</html>

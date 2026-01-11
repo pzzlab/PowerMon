@@ -1,0 +1,42 @@
+﻿<!-- Main Page of WebServer --> 
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8" name="viewport" content="width=device-width"/>	
+	<link rel="icon" href="data:,">
+  <title>PwrMon V1.0 By P.F.</title> 
+  <style type="text/css">
+	body		{font:bold 20px arial;width:770px;} 
+	div			{width:100%;display:inline-flex;}
+	.accbtn		{font:bold 16px arial;}
+	button		{font:bold 20px arial;color:blueviolet;margin: 4px 8px 8px 0px;padding:4px;min-width:50px;}
+	#tody,#isdy	{width:90px;color:blue;}
+    #home		{color:Red;}
+    #chart		{border:thin solid lime;background-color:black;margin-top:4px;}
+	#btns		{width:fit-content;}
+	#ch0,#ch1	{position:relative;top:-12px;}
+	#lb0		{font:bold 16px arial;position:relative;left:-24px;top:24px;}
+	#lb1		{font:bold 16px arial;position: relative;left:-24px;top:24px;}
+  </style>
+</head>
+<body onload="EntryPage();">
+		<div>
+			<canvas id="chart" height="180" width="770" onclick="ChartClick()"></canvas><br/>
+		</div>
+		<div>
+			<button onclick="NavigateLog(0);" title="Select Today" id="tody" >Today</button> 
+			<button onclick="NavigateLog(-31);" title="- 31 days"><<<</button> 
+			<button onclick="NavigateLog(-7);" title="- 7 days"><<</button> 
+			<button onclick="NavigateLog(-1);" title="- 1 day"><</button> 
+			<button id="isdy" title="Selected Day">Date </button> 
+			<button onclick="NavigateLog(1);" title="+ 1 day">></button>
+			<button onclick="NavigateLog(7);" title="+ 7 day">>></button>
+			<button onclick="NavigateLog(31);" title="+ 31 day">>>></button>
+			<button id="home" onclick="location.href='index.html'" title="Return to Main Page" >Home</button>
+			<input type="radio" id="ch0" name="chsel" value="0" disabled="true" onclick="Chan=0" checked> <label id="lb0" for="ch0">Ch1</label>
+			<input type="radio" id="ch1" name="chsel" value="1" disabled="true" onclick="Chan=1"> 		  <label id="lb1" for="ch1">Ch2</label>
+		</div>
+
+	<script type="text/javascript" src="graph.js"></script>
+	</body>
+</html>

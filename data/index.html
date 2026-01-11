@@ -1,0 +1,67 @@
+﻿<!-- Main Page of WebServer --> 
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8" name="viewport" content="width=100%"/>	
+	<link rel="icon" href="data:,">
+  	<title>PwrMon V1.0 By P.F.</title> 
+  	<style type="text/css">
+	body		{font:bold 24px arial;margin: 2px;} 
+	table		{background-color:antiquewhite;border:2px black;text-align:center;border:thin solid black;}
+	tr			{height:40px;}
+	th			{font-size:16px;height:24px;width:135px;}
+	td			{border:thin solid black;padding-right:2px;background-color:aquamarine;height:30px;}
+	.now		{font-size:24px;color:blue;}
+	.btn		{font:bold 16px arial;color:blue;margin: 4px;padding: 4px 8px 4px 8px;width: 130px;}
+	.leg		{height:24px;text-align: center;position:relative;top:3px;}
+	.dth		{font-size:24px;height:24px;}
+	.navbtn		{font:bold 28px arial;color:blueviolet;width:80px;}
+	.chsel		{color:blue;}
+	#temp,#hum	{color:maroon;top:-8px;position:relative;top:-8px;}
+	#volt,#hz	{color:blue;}
+	#pf			{color:brown;}
+	#a			{color:mediumvioletred;}
+	#w			{color:blue;}
+	#wm 		{color:orangered;}
+	#t			{color:green;}
+	#ei,#eo		{color:deeppink;}
+	#chn		{color:orangered;}
+	#rst		{color:red;}
+	#grabtn		{color:magenta}
+	#srvbtn		{color:blue;}
+  </style>
+</head>
+<body onload="EntryPage();">
+	<table id="tab">
+		<tbody>
+			<tr class="dth"><th class="now" id="dat">10/11/1912</th><th class="now" id="tim">12:34.56</th></tr>
+			<tr class="leg"><th>Temperature</th><th>Humidity</th></tr>
+			<tr>	<th class="dth" id="temp">12^C</th><th class="dth" id="hum">22%</th></tr>
+			<tr class="leg"><th>Voltage [V]</th><th>Frequency [Hz]</th></tr>
+			<tr>	<td class="val" id="volt"></td><td class="val"id="hz"></td></tr>
+			<tr class="leg"><th>Cos&#934</th><th>Current [A]</th></tr>
+			<tr>	<td class="val"id="pf"></td><td class="val" id="a"></td>
+			<tr class="leg"><th>Power [W]</th><th>MaxPower [W]</th></tr>
+			<tr>	<td class="val"  id="w"></td><td class="val" id="wmx"></td></tr>
+			<tr class="leg"><th>At [h:m]</th><th>Elapsed [h:m]</th></tr>
+			<tr>	<td class="val" id="tm"></td><td class="val"  id="t"></td></tr>
+			<tr class="leg"><th>Wh In</th><th>Wh Out</th></tr>
+			<tr>	<td class="val" id="ei"></td><td class="val" id="eo"></td></tr>
+			<tr class="leg">
+				<th>
+					<input type="radio" id="ch0" name="chsel" value="0" disabled="true" onclick="Chan=0" checked> <label for="ch0">CH1</label>
+					<input type="radio" id="ch1" name="chsel" value="1" disabled="true" onclick="Chan=1"> 		   <label for="ch1">CH2</label>
+				</th>
+				<th><input class="btn" id="rst" type="button" value ="Reset" onclick="SendCmd(Chan+1)"></th>
+			</tr>	
+			<tr class="leg">
+				<th><button id="grabtn" class="btn" onclick="location.href='graph.html'" title="View Graphics">View Graphics</button></th>
+				<th><button id="srvbtn" class="btn" onclick="location.href='login?1&service.html'" title="Access to Service page (auth)">Service page</button></th>
+			</tr>	
+		</tbody>
+	</table>
+		<div>
+		</div>
+	<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
